@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/answer_button.dart';
 
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen({super.key});
@@ -16,19 +17,25 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             .min, // instead of taking of all the available vertiacal space it only takes the minimum vertical space as needed
 
         children: [
-          Text('The Question.....'),
+          Text(
+            'The Question.....',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+            ),
+          ),
           SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text('Answer 1'),
+          AnswerButton(
+            answerText: 'answer Text',
+            onTap: () {},
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text('Answer 2'),
+          AnswerButton(
+            answerText: 'answer Text',
+            onTap: () {},
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text('Answer 3'),
+          AnswerButton(
+            answerText: 'answer Text',
+            onTap: () {},
           ),
         ],
       ),
