@@ -12,7 +12,7 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
-    final currentQuestion = questions[0];
+    final currentQuestion = questions[1];
 
     return Center(
       child: Container(
@@ -32,7 +32,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 20),
-            ...currentQuestion.answers.map((answer) {
+            ...currentQuestion.getShuffledAnswes().map((answer) {
               return AnswerButton(answerText: answer, onTap: () {});
             })
           ],
