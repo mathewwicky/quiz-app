@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/questions.dart';
+import 'package:quiz_app/question_screen.dart';
 import 'package:quiz_app/start_screen.dart';
 
 class Quiz extends StatefulWidget {
@@ -24,12 +24,12 @@ class _QuizState extends State<Quiz> {
 
 // Alternativally
 
-  var activeScreen = 'start-screen';
+  var activeScreen = 'start-screen'; // an identifier for the start screen
 
   //Add method
   void switchScreen() {
     setState(() {
-      // setState help to re-excute the build method
+      // setState help to re-execute the build method
       activeScreen = "questions-screen";
     });
   }

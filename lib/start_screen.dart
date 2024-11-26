@@ -31,6 +31,7 @@ class StartScreen extends StatelessWidget {
               foregroundColor: Colors.white,
             ),
             onPressed: () {
+            //Here is the code once the button is pressed
               startQuiz();
             },
             label: const Text('Start Quiz'),
