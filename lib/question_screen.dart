@@ -15,36 +15,28 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     final currentQuestion = questions[0];
 
     return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize
-            .min, // instead of taking of all the available vertiacal space it only takes the minimum vertical space as needed
-
-        children: [
-          Text(
-            currentQuestion.text,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
+      child: Container(
+        margin: EdgeInsets.all(40),
+        child: Column(
+          mainAxisSize: MainAxisSize
+              .min,
+              crossAxisAlignment: CrossAxisAlignment.stretch, // instead of taking of all the available vertiacal space it only takes the minimum vertical space as needed
+        
+          children: [
+            Text(
+              currentQuestion.text,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+              ),
+              textAlign: TextAlign.center,
             ),
-          ),
-          SizedBox(height: 20),
-          AnswerButton(
-            answerText: currentQuestion.answers[0],
-            onTap: () {},
-          ),
-          AnswerButton(
-            answerText: currentQuestion.answers[1],
-            onTap: () {},
-          ),
-          AnswerButton(
-            answerText: currentQuestion.answers[2],
-            onTap: () {},
-          ),
-          AnswerButton(
-            answerText: currentQuestion.answers[3],
-            onTap: () {},
-          ),
-        ],
+            SizedBox(height: 20),
+            ...currentQuestion.answers.map((answer) {
+              return AnswerButton(answerText: answer, onTap: () {});
+            })
+          ],
+        ),
       ),
     );
   }
